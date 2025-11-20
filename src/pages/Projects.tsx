@@ -3,10 +3,10 @@ import ProjectCard from '../sections/ProjectCard'
 
 export default function Projects() {
   const items = [
-    { title: 'Aukusjobs', desc: 'Website using Wordpress', link: 'https://www.aukusjobs.com/' },
-    { title: 'World view Foundation', desc: 'Website using Wordpress (ACF).', link: 'https://www.worldview.org.au/' },
-    { title: 'SHTC', desc: 'Website desiging.', link: 'https://www.shtcnepal.com/' },
-    { title: 'IKBH', desc: 'E-commerce.', link: 'https://www.ikbhgroup.com.np/' },
+    { title: 'Aukusjobs', desc: 'Website using Wordpress', link: 'https://www.aukusjobs.com/', image: '/images/aukus.png' },
+    { title: 'World view Foundation', desc: 'Website using Wordpress (ACF).', link: 'https://www.worldview.org.au/',image: '/images/worldview.png' },
+    { title: 'SHTC', desc: 'Website desiging.', link: 'https://www.shtcnepal.com/', image: '/images/shtc.png' },
+    { title: 'IKBH', desc: 'E-commerce.', link: 'https://www.ikbhgroup.com.np/', image: '/images/ikbh.png' },
     { title: 'Analytics Dashboard', desc: 'Data viz and UI.', link: '#' },
   ]
 
@@ -20,7 +20,7 @@ export default function Projects() {
             key={item.title}
             title={item.title}
             description={item.desc}
-            link={item.link}
+            link={item.link} image={item.image}
           />
         ))}
       </div>
