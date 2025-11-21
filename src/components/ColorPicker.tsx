@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { ChromePicker, ColorResult } from "react-color";
+import { ChromePicker } from "react-color";
 
 export default function ColorPicker() {
   const [color, setColor] = useState("#ff9f1c");
@@ -11,7 +11,6 @@ export default function ColorPicker() {
       <ChromePicker
         color={color}
         onChangeComplete={(newColor: any) => setColor(newColor.hex)}
-
       />
 
       <div
