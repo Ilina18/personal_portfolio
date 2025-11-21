@@ -1,4 +1,5 @@
 module.exports = {
+  darkMode: 'class', // <-- Add this line to enable dark mode
   content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}"
@@ -20,7 +21,6 @@ module.exports = {
       spacing: {
         18: "4.5rem", // example of custom margin/padding
       },
-      
     },
   },
   plugins: [],

@@ -41,9 +41,9 @@ export default function Contact() {
 
   return (
     <div className="max-w-2xl">
-      <h1 className="text-2xl font-bold mb-4">Get in touch</h1>
-      <p className="text-gray-700 mb-4">
-        Feel free to reach out via this form or connect on LinkedIn / GitHub.
+      <h1 className="text-2xl font-bold mb-4 dark:text-white ">Get in touch</h1>
+      <p className="text-gray-700 mb-4 dark:text-white ">
+        Feel free to reach out via this form or connect on LinkedIn
       </p>
 
       <form onSubmit={handleSubmit} className="bg-white rounded-lg shadow p-6">

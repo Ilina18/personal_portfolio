@@ -24,7 +24,7 @@ export default function Home() {
 
   const projects = [
     {
-      title: "Redesign Landing",
+      title: "Web Development",
       description: "Landing page redesign for a fintech startup,Landing page redesign for a fintech startup.",
     },
     {
@@ -58,13 +58,15 @@ export default function Home() {
 
   return (
     <div>
+      
       {/* About Section */}
-      <section className=" mb-8">
+      <section className=" mb-8 ">
         <div className="grid md:grid-cols-2 gap-6 items-center">
+           
           <div>
-            <h1 className="text-2xl font-bold mb-4  text-secondary">{profile.greeting}</h1>
-            <p className="text-4xl font-bold mb-8">{profile.post}</p>
-            <p className="text-gray-600 mt-4 mb-8">{profile.bio}</p>
+            <h1 className="text-2xl font-bold mb-4 dark:text-white  text-secondary">{profile.greeting}</h1>
+            <p className="text-4xl font-bold dark:text-white  mb-8">{profile.post}</p>
+            <p className="text-gray-600 mt-4 dark:text-white  mb-8">{profile.bio}</p>
            
 
             <div className="space-x-3">
@@ -72,7 +74,7 @@ export default function Home() {
     <Link
       key={index}
       to={btn.link}   // <-- Use 'to' instead of 'href'
-      className={`inline-block px-5 py-3 rounded-lg ${
+      className={`inline-block px-5 py-3 dark:text-white rounded-lg ${
         btn.type === "primary"
           ? "bg-secondary text-white"
           : "border text-gray-700"

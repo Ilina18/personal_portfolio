@@ -1,6 +1,6 @@
 import React from 'react'
 import ProjectCard from '../sections/ProjectCard'
-
+import ColorPicker from "../components/ColorPicker";
 export default function Projects() {
   const items = [
     { title: 'Aukusjobs', desc: 'Website using Wordpress', link: 'https://www.aukusjobs.com/', image: '/images/aukus.png' },
@@ -12,7 +12,7 @@ export default function Projects() {
 
   return (
     <div>
-      <h1 className="text-2xl font-bold mb-4">Projects</h1>
+      <h1 className="text-2xl font-bold mb-4 dark:text-white ">Projects</h1>
 
       <div className="grid md:grid-cols-3 gap-6">
         {items.map(item => (
@@ -24,6 +24,8 @@ export default function Projects() {
           />
         ))}
       </div>
+      <div className="flex">  <ColorPicker /></div>
+    
     </div>
   )
 }
