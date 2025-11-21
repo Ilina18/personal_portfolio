@@ -10,7 +10,8 @@ export default function ColorPicker() {
 
       <ChromePicker
         color={color}
-        onChangeComplete={(newColor: ColorResult) => setColor(newColor.hex)}
+        onChangeComplete={(newColor: any) => setColor(newColor.hex)}
+
       />
 
       <div
