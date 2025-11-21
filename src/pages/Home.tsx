@@ -1,5 +1,6 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { Link } from "react-router-dom";
 import { Navigation, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
@@ -67,20 +68,21 @@ export default function Home() {
            
 
             <div className="space-x-3">
-              {profile.buttons.map((btn, index) => (
-                <a
-                  key={index}
-                  href={btn.link}
-                  className={`inline-block px-5 py-3 rounded-lg ${
-                    btn.type === "primary"
-                      ? "bg-secondary text-white"
-                      : "border text-gray-700"
-                  }`}
-                >
-                  {btn.label}
-                </a>
-              ))}
-            </div>
+  {profile.buttons.map((btn, index) => (
+    <Link
+      key={index}
+      to={btn.link}   // <-- Use 'to' instead of 'href'
+      className={`inline-block px-5 py-3 rounded-lg ${
+        btn.type === "primary"
+          ? "bg-secondary text-white"
+          : "border text-gray-700"
+      }`}
+    >
+      {btn.label}
+    </Link>
+  ))}
+</div>
+
           </div>
 
           <div className="flex justify-center">
