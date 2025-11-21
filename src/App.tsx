@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { Routes, Route } from "react-router-dom";
-
+import { Routes, Route, Navigate } from "react-router-dom";
+import Admin from "./pages/Admin";
+import Login from "./pages/Login"; // make sure Login exists
+import { onAuthStateChanged } from "firebase/auth";
+import { auth } from "./firebase";
 import Layout from "./layout/Layout";
 import Home from "./pages/Home";
 import Projects from "./pages/Projects";
@@ -9,8 +12,9 @@ import Contact from "./pages/Contact";
 
 export default function App() {
   const [darkMode, setDarkMode] = useState(false);
+  const [user, setUser] = useState<any>(null);
 
-  // Remember user preference
+  // Remember dark mode preference
   useEffect(() => {
     const savedMode = localStorage.getItem("darkMode") === "true";
     setDarkMode(savedMode);
@@ -18,12 +22,18 @@ export default function App() {
 
   const toggleDarkMode = () => {
     setDarkMode(!darkMode);
-  localStorage.setItem("darkMode", String(!darkMode));
-
+    localStorage.setItem("darkMode", String(!darkMode));
   };
 
+  // Firebase auth listener
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+      setUser(currentUser);
+    });
+    return unsubscribe;
+  }, []);
+
   return (
-    // Top-level div with dark mode class
     <div className={darkMode ? "dark" : ""}>
       {/* Dark mode toggle button */}
       <div className="fixed top-4 right-4 z-50">
@@ -37,6 +47,12 @@ export default function App() {
 
       {/* Routes */}
       <Routes>
+        <Route path="/login" element={<Login />} />
+        <Route
+          path="/admin"
+          element={user ? <Admin /> : <Navigate to="/login" />}
+        />
+
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
           <Route path="projects" element={<Projects />} />

@@ -64,6 +64,7 @@ export default function Home() {
         <div className="grid md:grid-cols-2 gap-6 items-center">
            
           <div>
+            
             <h1 className="text-2xl font-bold mb-4 dark:text-white  text-secondary">{profile.greeting}</h1>
             <p className="text-4xl font-bold dark:text-white  mb-8">{profile.post}</p>
             <p className="text-gray-600 mt-4 dark:text-white  mb-8">{profile.bio}</p>

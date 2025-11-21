@@ -9,6 +9,7 @@ export default function Navbar() {
     { to: "/projects", label: "Projects" },
     { to: "/about", label: "About" },
     { to: "/contact", label: "Contact" },
+    
   ];
 
   return (

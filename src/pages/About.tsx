@@ -119,7 +119,7 @@ export default function About() {
       </div>
 
       {/* Education Section */}
-      <h2 className="text-xl font-semibold mt-10 mb-4">Education</h2>
+      <h2 className="text-xl font-semibold mt-10 dark:text-white  mb-4">Education</h2>
       <ul className="dark:text-white list-disc ml-5 text-gray-700 space-y-1">
         {aboutData.education.map((edu, index) => (
           <li key={index}>
