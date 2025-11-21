@@ -18,7 +18,8 @@ export default function App() {
 
   const toggleDarkMode = () => {
     setDarkMode(!darkMode);
-    localStorage.setItem("darkMode", !darkMode);
+  localStorage.setItem("darkMode", String(!darkMode));
+
   };
 
   return (

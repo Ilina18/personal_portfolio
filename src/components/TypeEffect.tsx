@@ -1,10 +1,10 @@
 import React from "react";
-import Typed from "react-typed";
+import { ReactTyped } from "react-typed";
 
 export default function TypingEffect() {
   return (
     <div className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-gray-100 p-4">
-      <Typed
+      <ReactTyped
         strings={[
           "Hello, I'm Ilina!",
           "I love React.",
