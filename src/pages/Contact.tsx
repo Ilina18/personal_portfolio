@@ -10,25 +10,27 @@ export default function Contact() {
 
   const [status, setStatus] = useState("");
 
-  const handleChange = (e) => {
+  // FIX 1 — Add event type
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  // FIX 2 — Add event type
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     emailjs
       .send(
-        "service_p4ftyoh",      // Your Service ID
-        "template_4wefx36",    // Your Template ID
-        formData,              // Your form values
-        "qRCq80-grS5Raljmq"    // Your Public Key
+        "service_p4ftyoh",     
+        "template_4wefx36",
+        formData,
+        "qRCq80-grS5Raljmq"
       )
       .then(
         (response) => {
           console.log("SUCCESS!", response);
           setStatus("Message sent successfully!");
-          setFormData({ name: "", email: "", message: "" }); // reset form
+          setFormData({ name: "", email: "", message: "" });
         },
         (error) => {
           console.log("FAILED...", error);
@@ -45,7 +47,6 @@ export default function Contact() {
       </p>
 
       <form onSubmit={handleSubmit} className="bg-white rounded-lg shadow p-6">
-        
         <label className="block mb-2 text-sm">Your name</label>
         <input
           name="name"
