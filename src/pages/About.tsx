@@ -130,3 +130,84 @@ export default function About() {
     </div>
   )
 }
+
+
+// import React, { useState, useEffect } from "react";
+// import { db } from "../firebase";
+// import { doc, getDoc } from "firebase/firestore";
+// import { FaFacebookF, FaInstagram, FaLinkedinIn, FaDribbble } from "react-icons/fa";
+
+// export default function AboutPage() {
+//   const [aboutData, setAboutData] = useState(null);
+
+//   useEffect(() => {
+//   const fetchAbout = async () => {
+//     const docRef = doc(db, 'about', '1');
+//     const docSnap = await getDoc(docRef);
+//     if (docSnap.exists()) setAboutData(docSnap.data());
+//   };
+//   fetchAbout();
+// }, []);
+
+
+
+//   if (!aboutData) return <p>Loading...</p>;
+
+//   return (
+//     <div className="mx-auto px-6 py-10 text-gray-800">
+//       <h1 className="text-3xl font-bold mb-6 text-secondary">{aboutData.title}</h1>
+//       <p className="text-gray-700 mb-8 leading-relaxed text-justify dark:text-white">{aboutData.description}</p>
+
+//       {/* Social Icons */}
+//       <div className="flex gap-6 mb-10 border-b pb-4">
+//         {aboutData.socials.map((social, index) => {
+//           let Icon;
+//           if (social.icon === "facebook") Icon = <FaFacebookF />;
+//           else if (social.icon === "instagram") Icon = <FaInstagram />;
+//           else if (social.icon === "linkedin") Icon = <FaLinkedinIn />;
+//           else if (social.icon === "dribbble") Icon = <FaDribbble />;
+
+//           return (
+//             <a
+//               key={index}
+//               href={social.url}
+//               target="_blank"
+//               rel="noopener noreferrer"
+//               className={`dark:text-white text-gray-600 ${social.color} transition-colors text-2xl`}
+//             >
+//               {Icon}
+//             </a>
+//           );
+//         })}
+//       </div>
+
+//       {/* Experience */}
+//       <h2 className="text-xl font-semibold mt-8 mb-4 text-secondary">Experience</h2>
+//       <div className="space-y-6">
+//         {aboutData.experience.map((exp, index) => (
+//           <div key={index}>
+//             <h3 className="dark:text-white font-semibold text-lg">{exp.role}</h3>
+//             <p className="dark:text-white text-gray-600 italic">{exp.company}</p>
+//             <p className="dark:text-white text-sm text-gray-500 mb-2">{exp.period}</p>
+//             <ul className="dark:text-white list-disc ml-5 text-gray-700 space-y-1">
+//               {exp.details.map((d, i) => (
+//                 <li key={i}>{d}</li>
+//               ))}
+//             </ul>
+//           </div>
+//         ))}
+//       </div>
+
+//       {/* Education */}
+//       <h2 className="text-xl font-semibold mt-10 dark:text-white mb-4">Education</h2>
+//       <ul className="dark:text-white list-disc ml-5 text-gray-700 space-y-1">
+//         {aboutData.education.map((edu, index) => (
+//           <li key={index}>
+//             <span className="font-medium">{edu.degree}</span> — {edu.university} ({edu.year})
+//           </li>
+//         ))}
+//       </ul>
+//     </div>
+//   );
+// }
+
