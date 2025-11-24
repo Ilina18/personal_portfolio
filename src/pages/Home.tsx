@@ -26,18 +26,22 @@ export default function Home() {
     {
       title: "Web Development",
       description: "Landing page redesign for a fintech startup,Landing page redesign for a fintech startup.",
+      image: '/images/aukus.png',
     },
     {
       title: "WEB / Mobile App UI/UX",
       description: "End-to-end flows for a social app,Landing page redesign for a fintech startup.",
+        image: '/images/figma.png',
     },
     {
       title: "Website Desining from scratch",
       description: "End-to-end flows for a social app,Landing page redesign for a fintech startup.",
+        image: '/images/web.jpg',
     },
     {
       title: "Dashboard UI",
       description: "Analytics dashboard with component library,Landing page redesign for a fintech startup.",
+      image: '/images/dashboard.png',
     },
   ];
   
@@ -138,7 +142,7 @@ export default function Home() {
           <SwiperSlide key={index}>
             <ProjectCard
               title={project.title}
-              description={project.description}
+              description={project.description} image={project.image}
             />
           </SwiperSlide>
         ))}
